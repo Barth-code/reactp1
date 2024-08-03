@@ -10,6 +10,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="*" element={<Home />} />
+          {/*pour les pages non idaentifier*/}
         </Routes>
       </BrowserRouter>
     </div>
