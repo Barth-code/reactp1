@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Card from "./Card";
 
 const Countries = () => {
   const [data, setData] = useState([]);
@@ -11,10 +12,12 @@ const Countries = () => {
   }, []);
   return (
     <div className="countries">
-      <h1>COUNTRIES</h1>
+      <ul className="radio-container">
+        <input type="range" min="1" max="250" />
+      </ul>
       <ul>
         {data.map((country, index) => (
-          <li key={index}>{country.translations.fra.common}</li>
+          <Card key={index} country={country} />
         ))}
       </ul>
     </div>
