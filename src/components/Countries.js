@@ -38,6 +38,7 @@ const Countries = () => {
       <ul>
         {data
           .filter((country) => country.continents[0].includes(selectedRadio))
+          .sort((a, b) => b.population - a.population) //Classer les pays du plus peuler au moins peupler
           .slice(0, rangeValue)
           .map((country, index) => (
             <Card key={index} country={country} />
